@@ -14,7 +14,7 @@ message AddRequest {
 
 // The response message containing the shopping cart id.
 message AddReply {
-    GrpcShoppingCart shoppingCart = 1;
+    GrpcShoppingCartSku shoppingCart = 1;
 }
 
 // The request message containing: customer id.
@@ -29,14 +29,18 @@ message SessionShoppingCartListRequest {
 
 // The response message containing the shopping cart list.
 message ShoppingCartListReply {
-    repeated GrpcShoppingCart shoppingCart = 1;
+    repeated GrpcShoppingCartSku shoppingCart = 1;
 }
 
 // The shopping cart message.
-message GrpcShoppingCart {
+message GrpcShoppingCartSku {
     int64 shopping_cart_id = 1;
     string session_id = 2;
     int64 customer_id = 3;
     int64 sku_id = 4;
     int32 quantity = 5;
+    string sku_number = 6;
+    string sku_name = 7;
+    string media_url = 8;
+    string price = 9;
 }
