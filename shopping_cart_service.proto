@@ -6,7 +6,7 @@ option java_package = "io.reactivesw.shoppingcart.grpc";
 import "shopping_cart_proto/shopping_cart_message.proto";
 
 // The add to cart service definition.
-service ShoppingCart {
+service ShoppingCartService {
     // Sends a product to add product to shopping cart service
     rpc addToShoppingCart (AddRequest) returns (AddReply) {}
     
