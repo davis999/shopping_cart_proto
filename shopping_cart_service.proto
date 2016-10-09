@@ -9,11 +9,17 @@ import "shopping_cart_proto/shopping_cart_message.proto";
 service ShoppingCartService {
     // Sends a product to add product to shopping cart service
     rpc addToShoppingCart (AddRequest) returns (AddReply) {}
-    
+
     // Lists the shopping cart for customer service
     rpc listShoppingCartForCustomer (CustomerShoppingCartListRequest) returns (ShoppingCartListReply) {}
-    
+
     // Lists the shopping cart for session service
     rpc listShoppingCartForSession (SessionShoppingCartListRequest) returns (ShoppingCartListReply) {}
+
+    // delete the sku from shopping cart for customer service
+    rpc deleteSkuForCustomer (CustomerSkuDeleteRequest) returns (SkuDeleteReply) {}
+
+    // delete the sku from shopping cart for session service
+    rpc deleteSkuForSession (SessionSkuDeleteRequest) returns (SkuDeleteReply) {}
 
 }

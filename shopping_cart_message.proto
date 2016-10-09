@@ -32,6 +32,22 @@ message ShoppingCartListReply {
     repeated GrpcShoppingCartSku shoppingCart = 1;
 }
 
+// The request message containing: customer id and sku id.
+message CustomerSkuDeleteRequest {
+    int64 customer_id = 1;
+    int64 sku_id = 2;
+}
+// The request message containing: session id and sku id.
+message SessionSkuDeleteRequest {
+    string session_id = 1;
+    int64 sku_id = 2;
+}
+
+// The response message boolean.
+message SkuDeleteReply {
+    bool deleted = 1;
+}
+
 // The shopping cart message.
 message GrpcShoppingCartSku {
     int64 shopping_cart_id = 1;
