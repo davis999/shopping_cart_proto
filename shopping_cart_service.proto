@@ -8,21 +8,27 @@ import "shopping_cart_proto/shopping_cart_message.proto";
 // The add to cart service definition.
 service ShoppingCartService {
     // Sends a product to add product to shopping cart service
-    rpc addToShoppingCart (AddRequest) returns (AddReply) {}
+    rpc addToShoppingCart (ShoppingCartRequest) returns (ShoppingCartReply) {}
 
     // Lists the shopping cart for customer service
-    rpc listShoppingCartForCustomer (CustomerShoppingCartListRequest) returns (ShoppingCartListReply) {}
+    rpc listShoppingCartForCustomer (CustomerRequest) returns (ShoppingCartListReply) {}
 
     // Lists the shopping cart for session service
-    rpc listShoppingCartForSession (SessionShoppingCartListRequest) returns (ShoppingCartListReply) {}
+    rpc listShoppingCartForSession (SessionRequest) returns (ShoppingCartListReply) {}
 
     // delete the sku from shopping cart for customer service
-    rpc deleteSkuForCustomer (CustomerSkuDeleteRequest) returns (SkuDeleteReply) {}
+    rpc deleteSkuForCustomer (CustomerSkuRequest) returns (DeleteReply) {}
 
     // delete the sku from shopping cart for session service
-    rpc deleteSkuForSession (SessionSkuDeleteRequest) returns (SkuDeleteReply) {}
+    rpc deleteSkuForSession (SessionSkuRequest) returns (DeleteReply) {}
+
+    // delete shopping cart for customer service
+    rpc deleteForCustomer (CustomerRequest) returns (DeleteReply) {}
+
+    // delete shopping cart for session service
+    rpc deleteForSession (SessionRequest) returns (DeleteReply) {}
 
     // Sends a product to edit shopping cart service
-    rpc editShoppingCart (AddRequest) returns (AddReply) {}
+    rpc editShoppingCart (ShoppingCartRequest) returns (ShoppingCartReply) {}
 
 }

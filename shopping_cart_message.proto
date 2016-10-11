@@ -5,25 +5,26 @@ option java_package = "io.reactivesw.shoppingcart.grpc";
 
 // The request message containing:
 // session id, customer id, sku id, quantity, inventory.
-message AddRequest {
+message ShoppingCartRequest {
     string session_id = 1;
     int64 customer_id = 2;
     int64 sku_id = 3;
     int32 quantity = 4;
+    int64 shopping_cart_id = 5;
 }
 
 // The response message containing the shopping cart id.
-message AddReply {
+message ShoppingCartReply {
     GrpcShoppingCartSku shoppingCart = 1;
 }
 
 // The request message containing: customer id.
-message CustomerShoppingCartListRequest {
+message CustomerRequest {
     int64 customer_id = 1;
 }
 
 // The request message containing: session id.
-message SessionShoppingCartListRequest {
+message SessionRequest {
     string session_id = 1;
 }
 
@@ -33,18 +34,18 @@ message ShoppingCartListReply {
 }
 
 // The request message containing: customer id and sku id.
-message CustomerSkuDeleteRequest {
+message CustomerSkuRequest {
     int64 customer_id = 1;
     int64 sku_id = 2;
 }
 // The request message containing: session id and sku id.
-message SessionSkuDeleteRequest {
+message SessionSkuRequest {
     string session_id = 1;
     int64 sku_id = 2;
 }
 
 // The response message boolean.
-message SkuDeleteReply {
+message DeleteReply {
     bool deleted = 1;
 }
 
