@@ -22,4 +22,7 @@ service ShoppingCartService {
     // delete the sku from shopping cart for session service
     rpc deleteSkuForSession (SessionSkuDeleteRequest) returns (SkuDeleteReply) {}
 
+    // Sends a product to edit shopping cart service
+    rpc editShoppingCart (AddRequest) returns (AddReply) {}
+
 }
